@@ -1,10 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import FooterLinksSection from './FooterLinksSection'
-import facebookIcon from './../../img/facebook.svg'
-import telegramIcon from './../../img/telegram.svg'
-import twitterIcon from './../../img/twitter.svg'
-import linkedinIcon from './../../img/linkedin.svg'
 
 
 function Footer() {
