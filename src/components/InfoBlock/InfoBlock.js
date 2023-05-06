@@ -1,8 +1,26 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import { toast } from "react-toastify"
 function InfoBlock(props) {
 
     const [email, setEmail] = useState('')
+
+    function handleSubmit(e) {
+        e.preventDefault()
+
+        toast.info('This website does not offer a subscription service.', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
+
+        setEmail('')
+    }
 
     return (
         <div className={`info-block ${props.customClass ? props.customClass : ''}`}>
@@ -22,8 +40,8 @@ function InfoBlock(props) {
             </p>
 
             {props.buttons === 'subscribe' ?
-                <form className="info-block__subscribe">
-                    <input placeholder="Enter your e-mail" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="info-block__subscribe-input"/><button className="info-block__subscribe-button button">Subscribe</button>
+                <form className="info-block__subscribe" onSubmit={handleSubmit}>
+                    <input placeholder="Enter your e-mail" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="info-block__subscribe-input" /><button className="info-block__subscribe-button button">Subscribe</button>
                 </form>
                 :
                 <div className="info-block__buttons">

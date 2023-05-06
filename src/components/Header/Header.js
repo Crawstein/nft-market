@@ -2,16 +2,13 @@ import { NavLink, Link } from 'react-router-dom';
 import HeaderLot from './HeaderLot';
 import InfoBlock from '../InfoBlock/InfoBlock';
 import HeaderStats from './HeaderStats';
+import { useSelector } from 'react-redux';
 
 
 
-const headerStatsData = {
-    artwork: 8.9,
-    artist: 65.3,
-    collection: 87.2
-}
 
 function Header(props) {
+    const headerStatsData = useSelector(state => state.toolkit.headerStatsData)
     
     return (
         <header id='header' className='header'>
@@ -27,8 +24,8 @@ function Header(props) {
                 </div>
                 <div className="header__content">
                     <div className="header__info">
-                        <InfoBlock {...props.infoBlockData}/>
-                        <HeaderStats {...headerStatsData}/>
+                        <InfoBlock {...props.infoBlockData} />
+                        <HeaderStats {...headerStatsData} />
                     </div>
                     <HeaderLot />
                 </div>

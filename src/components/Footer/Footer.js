@@ -1,48 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import FooterLinksSection from './FooterLinksSection'
+import { useSelector } from 'react-redux';
 
 
 function Footer() {
 
     const currentYear = new Date().getFullYear();
 
-    const footerLinksData = [
-        {
-            title: 'Explore',
-            links: [
-                `Art Sign In`,
-                `Collectibles`,
-                `Domain Name`,
-                `Utility`
-            ]
-        },
-        {
-            title: 'Statistic',
-            links: [
-                `Ranking`,
-                `Collectibles`,
-                `Activity`
-            ]
-        },
-        {
-            title: 'Company',
-            links: [
-                `About Us`,
-                `Career`,
-                `Support`,
-                `Partners`
-            ]
-        },
-        {
-            title: 'Resources',
-            links: [
-                `Help Center`,
-                `Platform Status`,
-                `Blog`
-            ]
-        },
-    ]
+    const footerLinksData = useSelector(state => state.toolkit.footerLinksData)
 
     return (
         <footer className="footer" id="footer">

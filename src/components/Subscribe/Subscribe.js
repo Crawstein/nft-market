@@ -1,21 +1,11 @@
 import React from 'react'
 import InfoBlock from '../InfoBlock/InfoBlock'
 import { MouseParallaxChild, MouseParallaxContainer } from "react-parallax-mouse";
+import { useSelector } from 'react-redux';
 
 function Subscribe(props) {
 
-    const parallaxStyles = [
-        {
-            position: 'absolute',
-            top: '0px',
-            left: '0px'
-        },
-        {
-            position: 'absolute',
-            bottom: '0px',
-            right: '0px'
-        }
-    ]
+    const parallaxStyles = useSelector(state => state.toolkit.subscribeParallaxStyles)
 
     return (
 

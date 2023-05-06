@@ -1,26 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PopularItem from './PopularItem'
+import { useSelector } from 'react-redux'
 
-const popularsData = [
-    {
-        name: `Osvaldo Percy`
-    },
-    {
-        name: `Ranson Sqiure`
-    },
-    {
-        name: `Sebastian Waltan`
-    },
-    {
-        name: `Abraham Zack`
-    },
-    {
-        name: `Cristio Leo`
-    },
-]
 
 function Popular() {
+    const popularsData = useSelector(state => state.toolkit.popularsData)
+
     return (
         <section className="popular" id="popular">
             <div className="container">

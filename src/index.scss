@@ -13,6 +13,7 @@ body {
   background-color: #090F1D;
   color: $secondary-bright;
   font-family: 'Jost', sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -871,6 +872,10 @@ h2 {
   }
 }
 
+.Toastify__toast {
+  font-family: 'Jost', sans-serif !important;
+  line-height: 1.2em;
+}
 
 .responsive-protection{
   position: fixed;
