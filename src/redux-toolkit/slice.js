@@ -5,7 +5,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const toolkitSlice = createSlice({
     name: 'state',
     initialState: {
-        count: 0,
         headerStatsData: {
             artwork: 8.9,
             artist: 65.3,
@@ -127,14 +126,6 @@ const toolkitSlice = createSlice({
                 right: '0px'
             }
         ],
-    },
-    reducers: {
-        increment(state) {
-            state.count = state.count + 1
-        },
-        decrement(state) {
-            state.count = state.count - 1
-        }
     }
 })
 
